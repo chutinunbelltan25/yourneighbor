@@ -10,11 +10,13 @@ module.exports = {
       width: {
         120: "30rem",
         "30p": "30px",
+        200: "200px",
       },
       height: {
         120: "30rem",
         152: "38rem",
         148: "37rem",
+        208: "208px",
       },
       margin: {
         19: "4.95rem",
