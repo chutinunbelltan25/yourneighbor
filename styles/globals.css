@@ -9,21 +9,24 @@
 .modal {
   background: transparent;
   position: fixed;
-  top: 0;
+  top: 25%;
   right: 0;
   bottom: 0;
   left: 0;
-  /* z-index must be below .jw-modal and above everything else  */
   z-index: 900;
+  height: 100%;
 }
 .modal-container {
   position: absolute;
+  height: auto;
   width: 70%;
   background: #4d4d4d;
+  opacity: 0.95;
   left: 50%;
   top: 10%;
   transform: translate(-50%, -50%);
   padding: 20px;
+  overflow: auto;
 }
 
 .triangle {
@@ -49,7 +52,7 @@
   margin-right: auto;
 }
 .container-web {
-  height: 38rem;
+  height: 45rem;
   width: 70%;
   border-right: 1px solid #000000;
   border-left: 1px solid #000000;

@@ -4,7 +4,7 @@ const ModalCatering = ({openModal, closeModal}) => {
   return (
     <div className={`${openModal === true ? "block modal" : "hidden"}`}>
       <div className="modal-container">
-        <div>
+        <div className="mt-48">
           <button onClick={() => closeModal(false)}>close</button>
         </div>
         <div className="text-center text-core-white-100 border-b-2 border-core-white-100 text-xl">

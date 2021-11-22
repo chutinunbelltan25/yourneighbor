@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Smoothscroll from "smoothscroll-polyfill";
+import { Fade } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
 import Head from "next/head";
 import LogoWithText from "../public/images/icon/logo_with_text.svg";
@@ -26,13 +28,42 @@ import ModalDrink from "../components/ModalDrink";
 import ModalDessert from "../components/ModalDessert";
 import ModalCatering from "../components/ModalCatering";
 
-
 const Home = () => {
-
   const [openModalFood, setOpenModalFood] = useState(false);
   const [openModalDessert, setOpenModalDessert] = useState(false);
   const [openModalDrink, setOpenModalDrink] = useState(false);
   const [openModalCatering, setOpenModalCatering] = useState(false);
+
+  const slideImageHuaHin = [
+    {
+      url: "images/floor4/hua_hin/1.jpg",
+      caption: "Slide 1",
+    },
+    {
+      url: "images/floor4/hua_hin/2.jpg",
+      caption: "Slide 2",
+    },
+    {
+      url: "images/floor4/hua_hin/3.jpg",
+      caption: "Slide 3",
+    },
+  ];
+  const slideImageTaweewattana = [
+    {
+      url: "images/floor4/tawee/1.jpg",
+      caption: "Slide 1",
+    },
+    {
+      url: "images/floor4/tawee/2.jpg",
+      caption: "Slide 2",
+    },
+    {
+      url: "images/floor4/tawee/3.jpg",
+      caption: "Slide 3",
+    },
+  ];
+
+  const [branch, setBranch] = useState(slideImageHuaHin);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -43,12 +74,11 @@ const Home = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      console.log('polyfilled');
+      console.log("polyfilled");
       Smoothscroll.polyfill();
       window.__forceSmoothScrollPolyfill__ = true;
     }
-  }, [])
-  
+  }, []);
 
   return (
     <div>
@@ -61,8 +91,14 @@ const Home = () => {
         />
       </Head>
       <div className="bg-gradient-to-t from-core-gray-100 to-core-black-200">
+        <div id="floor6">
+          <img src="images/icon/floor6.png" alt=""/>
+        </div>
         {/* floor 5 */}
-        <div className="container-header flex justify-end bg-core-white-100" id="floor5">
+        <div
+          className="container-header flex justify-end bg-core-white-100"
+          id="floor5"
+        >
           <h2 className="text_header">Our service</h2>
         </div>
         {/* 6st floor sigh */}
@@ -70,15 +106,17 @@ const Home = () => {
           <div className="absolute sign">
             <div className="floor_sign bg-core-white-100" />
             <a href="#floor6" onClick={handleClick}>
-            <div className="flo bg-core-white-100 rounded-lg">
-              <Arrow className="w-6 h-20 mx-auto mt-5" />
-              <div className="text-center">6th FL</div>
-              <div className="text-center">Art Lab</div>
-            </div>
+              <div className="flo bg-core-white-100 rounded-lg">
+                <Arrow className="w-6 h-20 mx-auto mt-5" />
+                <div className="text-center">6th FL</div>
+                <div className="text-center">Art Lab</div>
+              </div>
             </a>
           </div>
           <div className="container-web mx-auto bg-core-white-100">
-            <div className="triangle"></div>
+            <div className="w-full">
+              <img src="images/icon/triangle.png" />
+            </div>
             <div className="h-152">
               <div className="flex justify-center">
                 <div className="w-1/3 my-auto">
@@ -158,7 +196,10 @@ const Home = () => {
           </div>
         </div>
         {/* floor 4 */}
-        <div className="container-header flex justify-end bg-core-white-100" id="floor4">
+        <div
+          className="container-header flex justify-end bg-core-white-100"
+          id="floor4"
+        >
           <h2 className="text_header">Our Branches</h2>
         </div>
         {/* 5st floor sigh */}
@@ -166,47 +207,60 @@ const Home = () => {
           <div className="absolute sign">
             <div className="floor_sign bg-core-white-100" />
             <a href="#floor5" onClick={handleClick}>
-            <div className="flo bg-core-white-100 rounded-lg">
-              <Arrow className="w-6 h-20 mx-auto mt-5" />
-              <div className="text-center">5th FL</div>
-              <div className="text-center">Service</div>
-            </div>
+              <div className="flo bg-core-white-100 rounded-lg">
+                <Arrow className="w-6 h-20 mx-auto mt-5" />
+                <div className="text-center">5th FL</div>
+                <div className="text-center">Service</div>
+              </div>
             </a>
           </div>
           <div className="container-web mx-auto bg-core-white-100">
-            <div className="triangle"></div>
+            <div className="w-full">
+              <img src="images/icon/triangle.png" />
+            </div>
             <div className="h-152">
               <div className="flex justify-center">
-                <div className="w-1/2 my-auto">
-                  <div className="border border-core-black-100 bg-core-white-100 h-120 w-80 mx-auto p-3 rounded-2xl">
-                    <div className="border border-core-black-100 bg-core-white-100 h-full w-full ml-auto rounded-2xl">
-                      <img
-                        className="h-full rounded-2xl"
-                        src="/images/Promotions/Montly.png"
-                        alt=""
-                      />
+                <div className="w-1/5 my-auto mr-5">
+                  <div className="my-4">
+                    <button
+                      className="text-xl underline text-core-orange-100 font-bold"
+                      onClick={() => setBranch(slideImageHuaHin)}
+                    >
+                      Hua-Hin
+                    </button>
+                    <div>
+                      Open Hours : 8 AM - 8 PM
+                      <br />
+                      Tel : 099 251 1342
+                      <br />: Location
                     </div>
                   </div>
-                  <div className="text-center mt-4">
-                    <button className="bg-core-orange-100 text-core-white-100 py-2 px-3 rounded-2xl">
-                      Promotion
+                  <div className="my-4">
+                    <button
+                      className="text-xl underline text-core-orange-100 font-bold"
+                      onClick={() => setBranch(slideImageTaweewattana)}
+                    >
+                      Taweewattana
                     </button>
+                    <div>
+                      Open Hours : 10.30 AM - 8 PM
+                      <br />
+                      Tel : 097 264 6848
+                      <br />: Location
+                    </div>
                   </div>
                 </div>
-                <div className="w-1/2 my-auto">
-                  <div className="border border-core-black-100 bg-core-white-100 h-120 w-80 mx-auto p-3 rounded-2xl">
-                    <div className="border border-core-black-100 bg-core-white-100 h-full w-full ml-auto rounded-2xl">
-                      <img
-                        className="h-full rounded-2xl"
-                        src="/images/Promotions/Promotion.png"
-                        alt=""
-                      />
+                <div className="w-3/5 bg-core-white-100">
+                  <div className="border border-core-black-100 mx-auto p-5 rounded-t-full bg-core-white-100">
+                    <div className="border border-core-black-100 w-auto rounded-t-full">
+                      <Fade>
+                        {branch.map((slideImage, index) => (
+                          <div className="each-fade" key={index}>
+                            <img src={slideImage.url} alt="" className="rounded-t-full" />
+                          </div>
+                        ))}
+                      </Fade>
                     </div>
-                  </div>
-                  <div className="text-center mt-4">
-                    <button className="bg-core-orange-100 text-core-white-100 py-2 px-3 rounded-2xl">
-                      Promotion
-                    </button>
                   </div>
                 </div>
               </div>
@@ -225,15 +279,17 @@ const Home = () => {
           <div className="absolute sign">
             <div className="floor_sign bg-core-white-100" />
             <a href="#floor4" onClick={handleClick}>
-            <div className="flo bg-core-white-100 rounded-lg">
-              <Arrow className="w-6 h-20 mx-auto mt-5" />
-              <div className="text-center">4th FL</div>
-              <div className="text-center">Specials</div>
-            </div>
+              <div className="flo bg-core-white-100 rounded-lg">
+                <Arrow className="w-6 h-20 mx-auto mt-5" />
+                <div className="text-center">4th FL</div>
+                <div className="text-center">Specials</div>
+              </div>
             </a>
           </div>
           <div className="container-web mx-auto bg-core-white-100">
-            <div className="triangle"></div>
+            <div className="w-full">
+              <img src="images/icon/triangle.png" />
+            </div>
             <div className="h-152">
               <div className="flex justify-center">
                 <div className="w-1/2 my-auto">
@@ -311,7 +367,10 @@ const Home = () => {
           </div>
         </div>
         {/* floor 2 */}
-        <div className="container-header flex justify-end bg-core-white-100" id="floor2">
+        <div
+          className="container-header flex justify-end bg-core-white-100"
+          id="floor2"
+        >
           <h2 className="text_header">Secret ... just for you</h2>
         </div>
         {/* 3st floor sigh */}
@@ -319,15 +378,17 @@ const Home = () => {
           <div className="absolute sign">
             <div className="floor_sign bg-core-white-100" />
             <a href="#floor3" onClick={handleClick}>
-            <div className="flo bg-core-white-100 rounded-lg">
-              <Arrow className="w-6 h-20 mx-auto mt-5" />
-              <div className="text-center">3rd FL</div>
-              <div className="text-center">Menus</div>
-            </div>
+              <div className="flo bg-core-white-100 rounded-lg">
+                <Arrow className="w-6 h-20 mx-auto mt-5" />
+                <div className="text-center">3rd FL</div>
+                <div className="text-center">Menus</div>
+              </div>
             </a>
           </div>
           <div className="container-web mx-auto bg-core-white-100">
-            <div className="triangle"></div>
+            <div className="w-full">
+              <img src="images/icon/triangle.png" />
+            </div>
             <div className="h-152">
               <div className="flex justify-center">
                 <div className="w-1/2 my-auto">
@@ -367,7 +428,7 @@ const Home = () => {
           </div>
         </div>
         {/* floor 1 */}
-        <div className="container-header flex justify-end bg-core-white-100">
+        <div className="container-header flex justify-end bg-core-white-100" id="floor1">
           <img className="w-your my-4" src="/images/your_neighbor.png" alt="" />
         </div>
         {/* 1st floor sigh */}
@@ -375,18 +436,17 @@ const Home = () => {
           <div className="absolute sign">
             <div className="floor_sign bg-core-white-100" />
             <a href="#floor2" onClick={handleClick}>
-            <div
-              className="flo bg-core-white-100 rounded-lg"
-              
-            >
-              <Arrow className="w-6 h-20 mx-auto mt-5" />
-              <div className="text-center">2nd FL</div>
-              <div className="text-center">Branches</div>
-            </div>
+              <div className="flo bg-core-white-100 rounded-lg">
+                <Arrow className="w-6 h-20 mx-auto mt-5" />
+                <div className="text-center">2nd FL</div>
+                <div className="text-center">Branches</div>
+              </div>
             </a>
           </div>
           <div className="container-web-floor-1 mx-auto bg-core-white-100">
-            <div className="triangle"></div>
+            <div className="w-full">
+              <img src="images/icon/triangle.png" />
+            </div>
             <div className="">
               <div className="flex justify-center mt-10">
                 <div className="w-2/5">
@@ -402,19 +462,39 @@ const Home = () => {
                           <Arrow className="w-6 h-24 mx-1 mt-2" />
                         </div>
                         <div className="my-auto">
-                          <a className="underline text-xs my-1 block" href="#floor2" onClick={handleClick}>
+                          <a
+                            className="underline text-xs my-1 block"
+                            href="#floor2"
+                            onClick={handleClick}
+                          >
                             2nd fl. : Branches
                           </a>
-                          <a className="underline text-xs my-1 block" href="#floor3" onClick={handleClick}>
+                          <a
+                            className="underline text-xs my-1 block"
+                            href="#floor3"
+                            onClick={handleClick}
+                          >
                             3rd fl. : Menus
                           </a>
-                          <a className="underline text-xs my-1 block text-left" href="#floor4" onClick={handleClick}>
+                          <a
+                            className="underline text-xs my-1 block text-left"
+                            href="#floor4"
+                            onClick={handleClick}
+                          >
                             4th fl. : Monthly Specials/Promotion
                           </a>
-                          <a className="underline text-xs my-1 block" href="#floor5" onClick={handleClick}>
+                          <a
+                            className="underline text-xs my-1 block"
+                            href="#floor5"
+                            onClick={handleClick}
+                          >
                             5th fl. : Service
                           </a>
-                          <a className="underline text-xs my-1 block" href="#floor6" onClick={handleClick}>
+                          <a
+                            className="underline text-xs my-1 block"
+                            href="#floor6"
+                            onClick={handleClick}
+                          >
                             6th fl. : Art Lab
                           </a>
                         </div>

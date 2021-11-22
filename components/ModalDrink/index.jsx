@@ -1,32 +1,33 @@
 import React from "react";
 
-const ModalDrink = ({openModal, closeModal}) => {
+const ModalDrink = ({ openModal, closeModal }) => {
   return (
-    <div className={`${openModal === true ? "block modal" : "hidden"}`}>
-      <div className="modal-container">
-        <div>
-          <button onClick={() => closeModal(false)}>close</button>
-        </div>
-        <div className="text-center text-core-white-100 border-b-2 border-core-white-100 text-xl">
-          Drinks Menus
-        </div>
-        <div className="text-core-white-100 text-lg underline mx-10 my-6">
-          Recommended
-        </div>
-        {/* <div className="flex justify-center">
-          <div className="relative">
-            <a className="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
-              ไก่กอย่างกับเส้นหมี่ และหอมเจียว
-            </a>
-            <a href="#" className="relative">
-              <div className="h-48 flex flex-wrap content-center">
-                <img src="/images/food/001.svg" />
+    openModal && (
+      <div
+        className="fixed z-40 inset-0 overflow-y-auto"
+      >
+        <div className="flex items-center justify-center min-h-screen p-0 text-center sm:block sm:p-0">
+          <div
+            className="inline-block align-middle bg-secondary-white overflow-hidden shadow-xl transform transition-all sm:align-middle w-10/12 h-5/6"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-headline"
+          >
+            <div className="flex justify-center items-center bg-core-gray-200 p-6 pb-4 w-full h-full">
+              <div className="mt-48">
+                <button onClick={() => closeModal(false)}>close</button>
               </div>
-            </a>
+              <div className="text-center text-core-white-100 border-b-2 border-core-white-100 text-xl">
+                Drinks Menus
+              </div>
+              <div className="text-core-white-100 text-lg underline mx-10 my-6">
+                Recommended
+              </div>
+            </div>
           </div>
-        </div> */}
+        </div>
       </div>
-    </div>
+    )
   );
 };
 export default ModalDrink;
