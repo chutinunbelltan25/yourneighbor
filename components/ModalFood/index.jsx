@@ -2,11 +2,21 @@ import React from "react";
 import Image from "next/image";
 
 const ModalFood = ({ openModal, closeModal }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    document
+      .getElementById(e.currentTarget.hash.slice(1))
+      .scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     openModal && (
       <div className={`fixed top-0 z-40 inset-0 overflow-y-auto`}>
-        <div className="flex justify-center min-h-screen p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-9/12 mx-auto">
-          <div className="mx-24 flex justify-start border-b-4 border-core-white-100 pt-8">
+        <div
+          className="flex justify-center min-h-screen p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-full mx-auto"
+          id="Recommended"
+        >
+          <div className="mx-24 flex justify-start border-b-4 border-core-white-100 pt-2">
             <button
               onClick={() => closeModal(false)}
               className="mt-4 w-1/5 flex mb-4"
@@ -19,13 +29,75 @@ const ModalFood = ({ openModal, closeModal }) => {
                 className="w-52 h-52 rounded-xl"
               />
             </button>
-            <div className="text-center text-core-white-100 my-auto text-xl -ml-0 w-3/5">
+            <div className="text-center text-core-white-100 my-auto text-3xl -ml-0 w-3/5">
               Food Menus
             </div>
           </div>
-          <div className="text-core-white-100 text-lg underline mx-10 my-6">
-            Recommended
+          <div className="text-right text-core-white-100 mx-24">
+            *ราคาอาหารมีการเปลี่ยนแปลงตลอด
+            โปรดสอบถามพนักงานสาขาที่ต้องการใช้บริการ
           </div>
+          <div className="top-0 sticky z-20 bg-core-gray-200 bg-opacity-20">
+            <div className="text-core-white-100 text-lg mx-10 py-5">
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#Recommended"
+                onClick={handleClick}
+              >
+                Recommended
+              </a>
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#SingleDish"
+                onClick={handleClick}
+              >
+                Single dish
+              </a>
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#Snack"
+                onClick={handleClick}
+              >
+                Snack
+              </a>
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#ChilliDip"
+                onClick={handleClick}
+              >
+                Chilli dip
+              </a>
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#Curry"
+                onClick={handleClick}
+              >
+                Curry
+              </a>
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#SingleDish/Noodles"
+                onClick={handleClick}
+              >
+                Single dish/ Noodles
+              </a>
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#SpicySalad"
+                onClick={handleClick}
+              >
+                Spicy Salad
+              </a>
+              <a
+                className="underline text-2xl my-4 mx-2"
+                href="#Salad"
+                onClick={handleClick}
+              >
+                Salad
+              </a>
+            </div>
+          </div>
+
           <div className="flex justify-center">
             <div className="relative m-4">
               <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
@@ -37,6 +109,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                   <Image
                     width={200}
                     height={208}
+                    quality={30}
                     priority
                     src="/images/food/001.png"
                     className="w-52 h-52 rounded-xl"
@@ -54,6 +127,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                   <Image
                     width={200}
                     height={208}
+                    quality={30}
                     priority
                     src="/images/food/002.png"
                     className="w-52 h-52 rounded-xl"
@@ -71,6 +145,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                   <Image
                     width={200}
                     height={208}
+                    quality={30}
                     priority
                     src="/images/food/003.png"
                     className="w-52 h-52 rounded-xl"
@@ -91,6 +166,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/004.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -107,6 +183,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/005.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -124,6 +201,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/006.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -142,6 +220,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                   <Image
                     width={200}
                     height={208}
+                    quality={30}
                     priority
                     src="/images/food/007.png"
                     className="w-52 h-52 rounded-xl"
@@ -159,6 +238,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                   <Image
                     width={200}
                     height={208}
+                    quality={30}
                     priority
                     src="/images/food/008.png"
                     className="w-52 h-52 rounded-xl"
@@ -175,6 +255,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                   <Image
                     width={200}
                     height={208}
+                    quality={30}
                     priority
                     src="/images/food/009.png"
                     className="w-52 h-52 rounded-xl"
@@ -183,7 +264,8 @@ const ModalFood = ({ openModal, closeModal }) => {
               </a>
             </div>
           </div>
-          <div className="text-center my-8 text-core-white-100 text-xl underline">
+          <div className="w-full h-10" id="SingleDish"></div>
+          <div className="text-center text-core-white-100 text-xl underline mb-8">
             Single dish
           </div>
           <div className="flex justify-center">
@@ -197,6 +279,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/010.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -214,6 +297,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/011.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -232,6 +316,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/012.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -250,6 +335,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/013.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -269,6 +355,7 @@ const ModalFood = ({ openModal, closeModal }) => {
               </a>
             </div>
           </div>
+          <div className="w-full h-10" id="Snack"></div>
           <div className="text-center my-8 text-core-white-100 text-xl underline">
             Snack
           </div>
@@ -283,6 +370,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/014.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -299,6 +387,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/015.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -315,6 +404,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/016.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -333,6 +423,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/017.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -349,6 +440,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/018.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -366,6 +458,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/019.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -386,6 +479,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/020.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -405,6 +499,7 @@ const ModalFood = ({ openModal, closeModal }) => {
               </a>
             </div>
           </div>
+          <div className="w-full h-10" id="ChilliDip"></div>
           <div className="text-center my-8 text-core-white-100 text-xl underline">
             Chilli dip
           </div>
@@ -420,6 +515,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/021.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -437,6 +533,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/022.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -455,6 +552,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/023.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -474,6 +572,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/024.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -491,6 +590,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/025.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -508,6 +608,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/019.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -515,6 +616,7 @@ const ModalFood = ({ openModal, closeModal }) => {
               </a>
             </div>
           </div>
+          <div className="w-full h-10" id="Curry"></div>
           <div className="text-center my-8 text-core-white-100 text-xl underline">
             Curry
           </div>
@@ -529,6 +631,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/026.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -545,6 +648,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/027.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -562,6 +666,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/028.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -581,6 +686,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/030.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -597,6 +703,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/031.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -614,6 +721,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/032.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -633,6 +741,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/033.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -652,6 +761,7 @@ const ModalFood = ({ openModal, closeModal }) => {
               </a>
             </div>
           </div>
+          <div className="w-full h-10" id="SingleDish/Noodles"></div>
           <div className="text-center my-8 text-core-white-100 text-xl underline">
             Single dish/ Noodles
           </div>
@@ -666,6 +776,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/034.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -683,6 +794,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/035.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -701,6 +813,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/036.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -719,6 +832,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/037.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -735,6 +849,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/038.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -752,6 +867,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/039.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -772,6 +888,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/040.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -789,6 +906,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/041.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -805,6 +923,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/042.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -824,6 +943,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/043.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -841,6 +961,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/044.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -858,6 +979,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/045.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -877,6 +999,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/046.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -896,8 +1019,9 @@ const ModalFood = ({ openModal, closeModal }) => {
               </a>
             </div>
           </div>
+          <div className="w-full h-10" id="SpicySalad"></div>
           <div className="text-center my-8 text-core-white-100 text-xl underline">
-            Single dish/ Noodles
+            Spicy Salad
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
@@ -911,6 +1035,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/047.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -928,6 +1053,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/048.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -945,6 +1071,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/049.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -963,6 +1090,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/050.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -979,6 +1107,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/051.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -995,6 +1124,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/052.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1013,6 +1143,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/053.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1029,6 +1160,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/054.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1045,6 +1177,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/055.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1131,6 +1264,7 @@ const ModalFood = ({ openModal, closeModal }) => {
               </div>
             </div>
           </div>
+          <div className="w-full h-10" id="Salad"></div>
           <div className="text-center my-8 text-core-white-100 text-xl underline">
             Salad
           </div>
@@ -1140,7 +1274,16 @@ const ModalFood = ({ openModal, closeModal }) => {
                 สลัดผักย่าง Grilled Vegetable
               </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="h-52 flex flex-wrap content-center">
+                  <Image
+                    width={200}
+                    height={208}
+                    priority
+                    quality={30}
+                    src="/images/food/029.png"
+                    className="w-52 h-52 rounded-xl"
+                  />
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -1153,6 +1296,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/061.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1169,6 +1313,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/062.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1187,6 +1332,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/063.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1203,6 +1349,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/064.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1219,6 +1366,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/065.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1237,6 +1385,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/066.png"
                     className="w-52 h-52 rounded-xl"
                   />
@@ -1253,6 +1402,7 @@ const ModalFood = ({ openModal, closeModal }) => {
                     width={200}
                     height={208}
                     priority
+                    quality={30}
                     src="/images/food/067.png"
                     className="w-52 h-52 rounded-xl"
                   />

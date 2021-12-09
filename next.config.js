@@ -1,7 +1,9 @@
-module.exports = {
+const withFonts = require("next-fonts");
+
+module.exports = withFonts({
   webpack(config) {
       config.module.rules.push({
-          test: /\.svg$/,
+          test: /\.(png|woff|woff2|eot|ttf|svg)$/,
           use: ['@svgr/webpack'],
       });
 
@@ -10,4 +12,4 @@ module.exports = {
   module: {
       loaders: [{ test: /\.css$/, loader: 'style-loader!css-loader' }],
   },
-};
+});

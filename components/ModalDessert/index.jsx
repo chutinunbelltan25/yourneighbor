@@ -5,7 +5,7 @@ const ModalDessert = ({ openModal, closeModal }) => {
   return (
     openModal && (
       <div className={`fixed top-0 z-40 inset-0 overflow-y-auto`}>
-        <div className="flex justify-center min-h-screen p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-9/12 mx-auto">
+        <div className="flex justify-center min-h-screen p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-full mx-auto">
           <div className="mx-24 flex justify-start border-b-4 border-core-white-100 pt-8">
             <button
               onClick={() => closeModal(false)}
@@ -19,9 +19,13 @@ const ModalDessert = ({ openModal, closeModal }) => {
                 className="w-52 h-52 rounded-xl"
               />
             </button>
-            <div className="text-center text-core-white-100 my-auto text-xl -ml-0 w-3/5">
+            <div className="text-center text-core-white-100 my-auto text-3xl -ml-0 w-3/5">
               Desserts Menus
             </div>
+          </div>
+          <div className="text-right text-core-white-100 mx-24">
+            *ราคาอาหารมีการเปลี่ยนแปลงตลอด
+            โปรดสอบถามพนักงานสาขาที่ต้องการใช้บริการ
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
@@ -42,12 +46,11 @@ const ModalDessert = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                แอปเปิ้ล + เครป (ดั้งเดิม/ ช็อคโกแลต/ ชาเขียว) Apple + Crape
-                (Original/Chocolate/Green tea)
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  แอปเปิ้ล + เครป (ดั้งเดิม/ ช็อคโกแลต/ ชาเขียว) Apple + Crape
+                  (Original/Chocolate/Green tea)
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -141,39 +144,35 @@ const ModalDessert = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                ทาร์ตเลม่อนชีส และไอศกรีมช็อคโกแลต Lemon cheese tart with
-                Chocolate icecream
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  ทาร์ตเลม่อนชีส และไอศกรีมช็อคโกแลต Lemon cheese tart with
+                  Chocolate icecream
+                </div>
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                เค้กส้มและชาร้อน The original orange cake served with hot
-                english tea
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  เค้กส้มและชาร้อน The original orange cake served with hot
+                  english tea
+                </div>
               </a>
             </div>
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                ไอศกรีม(ลูก) Icecream (scoop)
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  ไอศกรีม(ลูก) Icecream (scoop)
+                </div>
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                บานาน่าสปลิต Banana Split
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  บานาน่าสปลิต Banana Split
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -211,11 +210,10 @@ const ModalDessert = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                มิล์คเชค Ice cream milkshake
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  มิล์คเชค Ice cream milkshake
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -237,11 +235,10 @@ const ModalDessert = ({ openModal, closeModal }) => {
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
-                ไอศกรีมโฟล้ต (รูทเบียร์) Ice cream float (Root beer)
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  ไอศกรีมโฟล้ต (รูทเบียร์) Ice cream float (Root beer)
+                </div>
               </a>
             </div>
             <div className="relative m-4">

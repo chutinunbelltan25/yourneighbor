@@ -2,10 +2,19 @@ import React from "react";
 import Image from "next/image";
 
 const ModalDrink = ({ openModal, closeModal }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    document
+      .getElementById(e.currentTarget.hash.slice(1))
+      .scrollIntoView({ behavior: "smooth" });
+  };
   return (
     openModal && (
       <div className={`fixed top-0 z-40 inset-0 overflow-y-auto`}>
-        <div className="flex justify-center min-h-screen p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-9/12 mx-auto">
+        <div
+          className="flex justify-center min-h-screen p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-full mx-auto"
+          id="Coffee"
+        >
           <div className="mx-24 flex justify-start border-b-4 border-core-white-100 pt-8">
             <button
               onClick={() => closeModal(false)}
@@ -19,19 +28,37 @@ const ModalDrink = ({ openModal, closeModal }) => {
                 className="w-52 h-52 rounded-xl"
               />
             </button>
-            <div className="text-center text-core-white-100 my-auto text-xl -ml-0 w-3/5">
+            <div className="text-center text-core-white-100 my-auto text-3xl -ml-0 w-3/5">
               Drinks Menus
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="text-core-white-100 text-lg underline mx-10 my-6">
-              Coffee & Cocoa
-            </div>
-            <div className="text-core-white-100 text-lg underline mx-10 my-6">
-              Milk & Tea
-            </div>
-            <div className="text-core-white-100 text-lg underline mx-10 my-6">
-              Sparking Drinks & Juices
+          <div className="text-right text-core-white-100 mx-24">
+            *ราคาอาหารมีการเปลี่ยนแปลงตลอด
+            โปรดสอบถามพนักงานสาขาที่ต้องการใช้บริการ
+          </div>
+          <div className="top-0 sticky z-20 bg-core-gray-200 bg-opacity-20">
+            <div className="flex justify-around mx-60">
+              <a
+                className="text-core-white-100 text-2xl underline my-4"
+                href="#Coffee"
+                onClick={handleClick}
+              >
+                Coffee & Cocoa
+              </a>
+              <a
+                className="text-core-white-100 text-2xl underline my-4"
+                href="#Milk"
+                onClick={handleClick}
+              >
+                Milk & Tea
+              </a>
+              <a
+                className="text-core-white-100 text-2xl underline my-4"
+                href="#Sparking"
+                onClick={handleClick}
+              >
+                Sparking Drinks & Juices
+              </a>
             </div>
           </div>
           <div className="flex justify-center">
@@ -53,11 +80,10 @@ const ModalDrink = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                เอสเพรสโซ่เย็น ไทยสไตล์ Thai-style Iced Espresso
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  เอสเพรสโซ่เย็น ไทยสไตล์ Thai-style Iced Espresso
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -297,10 +323,14 @@ const ModalDrink = ({ openModal, closeModal }) => {
               </a>
             </div>
           </div>
+          <div className="w-full h-10" id="Milk"></div>
+          <div className="text-center my-8 text-core-white-100 text-xl underline">
+            Milk & Tea
+          </div>
           <div className="flex justify-center">
             <div className="relative m-4">
               <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
-                กรีนที สวีท เอสเพรสโซ่ Green Tea Sweet Espresso
+                นมไวท์ช็อคโกแลต White Chocolate Milk
               </a>
               <a href="#" className="relative">
                 <div className="h-52 flex flex-wrap content-center">
@@ -415,38 +445,34 @@ const ModalDrink = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                คาราเมลครีม Caramel milky cream
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  คาราเมลครีม Caramel milky cream
+                </div>
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                ชาทไวน์นิ่ง Twining Tea
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  ชาทไวน์นิ่ง Twining Tea
+                </div>
               </a>
             </div>
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                ชาไม่ใส่นม Tea without Milk
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  ชาไม่ใส่นม Tea without Milk
+                </div>
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                ใบชาจีน/ สิปตัน/ ชาไทย/ ชาเขียว Chinese Tea Leaf / Lipton / Thai
-                Tea / Green Tea
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  ใบชาจีน/ สิปตัน/ ชาไทย/ ชาเขียว Chinese Tea Leaf / Lipton /
+                  Thai Tea / Green Tea
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -484,11 +510,10 @@ const ModalDrink = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                ไอศกรีมโฟล์ท Ice-cream Float
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  ไอศกรีมโฟล์ท Ice-cream Float
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -497,6 +522,11 @@ const ModalDrink = ({ openModal, closeModal }) => {
                 <div className="w-200 h-208 flex flex-wrap content-center bg-transparent"></div>
               </a>
             </div>
+          </div>
+          <div className="w-full h-10" id="Sparking"></div>
+
+          <div className="text-center my-8 text-core-white-100 text-xl underline">
+            Sparking Drinks & Juices
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
@@ -569,11 +599,10 @@ const ModalDrink = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                อัญชัญมะนาว Butterfly Pea Flower and Lime Honey
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  อัญชัญมะนาว Butterfly Pea Flower and Lime Honey
+                </div>
               </a>
             </div>
             <div className="relative m-4">
@@ -699,19 +728,17 @@ const ModalDrink = ({ openModal, closeModal }) => {
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
-                น้ำอัดลม Soft drirk
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  น้ำอัดลม Soft drirk
+                </div>
               </a>
             </div>
             <div className="relative m-4">
-              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
-                น้ำเปล่า / โซดา (ขวด) Water / Soda(bottle)
-              </a>
               <a href="#" className="relative">
-                <div className="w-200 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl"></div>
+                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
+                  น้ำเปล่า / โซดา (ขวด) Water / Soda(bottle)
+                </div>
               </a>
             </div>
             <div className="relative m-4">
