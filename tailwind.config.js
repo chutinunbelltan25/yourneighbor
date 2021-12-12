@@ -8,7 +8,7 @@ module.exports = {
         body: ["FC-Home", "sans-serif"],
       },
       width: {
-        70: "71%",
+        70: "65%",
         112: "28rem",
         120: "30rem",
         148: "37rem",
@@ -21,7 +21,10 @@ module.exports = {
         200: "200px",
       },
       height: {
+        45: '45rem',
+        43: '43rem',
         84: '21rem',
+        100: '100rem',
         120: "30rem",
         140: "35rem",
         152: "38rem",

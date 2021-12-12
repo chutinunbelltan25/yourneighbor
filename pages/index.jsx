@@ -87,6 +87,20 @@ const Home = () => {
     },
   ];
 
+  const properties = {
+    infinite: true,
+    prevArrow: (
+      <div className="arrow-left transform rotate-180">
+        <Image src="/images/icon/arrow.png" width="35" height="35" alt="" />
+      </div>
+    ),
+    nextArrow: (
+      <div className="arrow-right">
+        <Image src="/images/icon/arrow.png" width="35" height="35" alt="" />
+      </div>
+    ),
+  };
+
   const [branch, setBranch] = useState(slideImageHuaHin);
   const [nameBranch, setNameBranch] = useState("Hua-Hin");
 
@@ -128,6 +142,12 @@ const Home = () => {
           name="viewport"
           content="width=1440px, initial-scale=1, maximum-scale=1"
         />
+        <script defer src="/your-path-to-fontawesome/js/brands.js"></script>
+        <script defer src="/your-path-to-fontawesome/js/solid.js"></script>
+        <script
+          defer
+          src="/your-path-to-fontawesome/js/fontawesome.js"
+        ></script>
       </Head>
       <div className="bg-gradient-to-t from-core-gray-100 to-core-black-200">
         <div className="relative">
@@ -135,24 +155,30 @@ const Home = () => {
             <img src="images/icon/floor6.png" alt="" className="ggg" />
           </div>
           <div className="absolute bottom-text w-full text-center flex justify-center">
-            <button
-              className="text-3xl underline w-60"
-              onClick={() => setOpenModalArt(true)}
-            >
-              Art Labs
-            </button>
-            <button
-              className="text-3xl underline w-60"
-              onClick={() => setOpenModalProject(true)}
-            >
-              Projects
-            </button>
-            <button
-              className="text-3xl underline w-60"
-              onClick={() => setOpenModalSchool(true)}
-            >
-              School
-            </button>
+            <div className="w-40 ml-12">
+              <button
+                className="text-3xl underline"
+                onClick={() => setOpenModalArt(true)}
+              >
+                Art Labs
+              </button>
+            </div>
+            <div className="mr-6 ml-8">
+              <button
+                className="text-3xl underline w-80 text-center"
+                onClick={() => setOpenModalProject(true)}
+              >
+                Projects
+              </button>
+            </div>
+            <div className="w-40 mr-8">
+              <button
+                className="text-3xl underline"
+                onClick={() => setOpenModalSchool(true)}
+              >
+                School
+              </button>
+            </div>
           </div>
         </div>
         {/* floor 5 */}
@@ -335,7 +361,7 @@ const Home = () => {
             <div className="w-full">
               <img src="images/icon/triangle.png" />
             </div>
-            <div className="h-152 w-full my-40 xl:my-32 2xl:my-28">
+            <div className="h-152 w-full my-20 2xl:my-20">
               <div className="flex justify-center items-center">
                 <div className="w-1/5 my-auto mr-5">
                   <div className="my-4">
@@ -480,14 +506,14 @@ const Home = () => {
                 <div className="w-1/2 bg-core-white-100">
                   <div className="border border-core-black-100 mx-auto p-5 rounded-t-full bg-core-white-100">
                     <div className="border border-core-black-100 w-auto rounded-t-full">
-                      <Fade>
+                      <Fade {...properties}>
                         {branch.map((slideImage, index) => (
                           <div className="each-fade" key={index}>
                             <Image
                               src={slideImage.url}
                               alt=""
-                              width={800}
-                              height={550}
+                              width={1000}
+                              height={889}
                               layout="responsive"
                               className="rounded-t-full w-full h-1/3"
                             />
@@ -534,10 +560,10 @@ const Home = () => {
                 <div className="w-1/2">
                   <div className="mr-20 border border-core-black-100 bg-core-white-100 h-56 w-56 mx-auto p-3 rounded-full">
                     <div className="border border-core-black-100 bg-core-white-100 h-full w-full mx-auto rounded-full">
-                      <div className="px-12 pt-14">
+                      <div className="px-14 pt-14">
                         <Image
                           src="/images/icon/food.png"
-                          width={96}
+                          width={80}
                           height={96}
                           priority
                           layout="fixed"
@@ -557,10 +583,10 @@ const Home = () => {
                 <div className="w-1/2">
                   <div className="ml-20 border border-core-black-100 bg-core-white-100 h-56 w-56 mx-auto p-3 rounded-full">
                     <div className="border border-core-black-100 bg-core-white-100 h-full w-full mx-auto rounded-full">
-                      <div className="px-12 pt-10">
+                      <div className="px-14 pt-10">
                         <Image
                           src="/images/icon/dessert.png"
-                          width={96}
+                          width={80}
                           height={96}
                           priority
                           layout="fixed"
@@ -582,10 +608,10 @@ const Home = () => {
                 <div className="w-1/2 my-auto">
                   <div className="mr-20 border border-core-black-100 bg-core-white-100 h-56 w-56 mx-auto p-3 rounded-full">
                     <div className="border border-core-black-100 bg-core-white-100 h-full w-full mx-auto rounded-full">
-                      <div className="pt-8 px-12">
+                      <div className="pt-8 px-16">
                         <Image
                           src="/images/icon/drink.png"
-                          width={100}
+                          width={70}
                           height={120}
                           priority
                           layout="fixed"
@@ -605,7 +631,7 @@ const Home = () => {
                 <div className="w-1/2 my-auto">
                   <div className="ml-20 border border-core-black-100 bg-core-white-100 h-56 w-56 mx-auto p-3 rounded-full">
                     <div className="border border-core-black-100 bg-core-white-100 h-full w-full mx-auto rounded-full">
-                      <div className="pt-12 px-8">
+                      <div className="pt-12 px-10">
                         <Image
                           src="/images/icon/catering.png"
                           width={130}
@@ -792,7 +818,7 @@ const Home = () => {
                         </div>
                         <div className="flex justify-center">
                           <a
-                            href="https://www.facebook.com/yourneighborkanchana"
+                            href="https://www.facebook.com/YourNeighborsHuahin"
                             target="_blank"
                           >
                             <img
@@ -812,7 +838,7 @@ const Home = () => {
                             />
                           </a>
                           <a href="tel:0972646848">
-                          <img
+                            <img
                               src="/images/icon/tel.png"
                               className="w-6 h-6 mx-1 mt-1"
                               alt=""
@@ -857,12 +883,12 @@ const Home = () => {
                           className="relative hover:bg-core-white-100 rounded-full p-4 hover:opacity-0 flex justify-center"
                         >
                           <Image
-                          src="/images/icon/logo_with_text.png"
-                          width={320}
-                          height={320}
-                          priority
-                          layout="fixed"
-                        />
+                            src="/images/icon/logo_with_text.png"
+                            width={320}
+                            height={320}
+                            priority
+                            layout="fixed"
+                          />
                         </a>
                       </div>
                     </div>

@@ -46,10 +46,13 @@ const ModalCatering = ({ openModal, closeModal }) => {
       caption: "Slide 3",
     },
   ];
+
   return (
     openModal && (
-      <div className={`fixed top-0 z-40 inset-0 overflow-y-auto`}>
-        <div className="flex justify-center min-h-screen p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-full mx-auto">
+      <div
+        className={`fixed top-0 z-40 inset-0 bg-core-gray-200 bg-opacity-80`}
+      >
+        <div className="modal-center w-full">
           <div className="mx-24 flex justify-start border-b-4 border-core-white-100 pt-8">
             <button
               onClick={() => closeModal(false)}
@@ -67,28 +70,27 @@ const ModalCatering = ({ openModal, closeModal }) => {
               Catering Service
             </div>
           </div>
-          <div className="text-center text-core-white-100 mx-24 my-6">
-            We are an experienced catering service that offers various products
-            for your party from snack boxes, lunch boxes, cocktail food, to
-            dining table decoration. Our delicious food boxes have many options
-            that are suitable for your event and always deliver on time to your
-            destination. For any unique and special event, our team includes
-            skillful professionals that can help make your vision come true.
-            Please contact us for more information !
-          </div>
+
           <div className="w-2/3 mx-auto">
-            <Slide>
-              {slideImage.map((slideImage, index) => (
-                <div className="each-slide" key={index}>
-                  <img
-                    src={slideImage.url}
-                    alt=""
-                    className="w-full"
-                  />
-                </div>
-              ))}
-            </Slide>
+            <div className="text-center text-core-white-100 mx-auto my-6 text-lg">
+              We are an experienced catering service that offers various
+              products for your party from snack boxes, lunch boxes, cocktail
+              food, to dining table decoration. Our delicious food boxes have
+              many options that are suitable for your event and always deliver
+              on time to your destination. For any unique and special event, our
+              team includes skillful professionals that can help make your
+              vision come true. Please contact us for more information !
             </div>
+            <div className="mx-10">
+              <Slide>
+                {slideImage.map((slideImage, index) => (
+                  <div className="each-slide" key={index}>
+                    <img src={slideImage.url} alt="" className="w-full" />
+                  </div>
+                ))}
+              </Slide>
+            </div>
+          </div>
         </div>
       </div>
     )

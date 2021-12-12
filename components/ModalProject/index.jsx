@@ -5,8 +5,8 @@ const ModalArt = ({ openModal, closeModal, title }) => {
   const [changeData, setChangeData] = useState(false);
   return (
     openModal && (
-      <div className={`fixed top-0 z-40 inset-0 overflow-y-auto`}>
-        <div className="flex justify-center h-full p-0 text-center sm:block sm:p-0 bg-core-gray-200 bg-opacity-80 w-full mx-auto">
+      <div className={`fixed top-0 z-40 inset-0 overflow-y-auto bg-core-gray-200 bg-opacity-80`}>
+        <div className={`${changeData === false ? 'h-full overflow-y-auto' : ''} modal-center w-full`}>
           <div className="mx-24 flex justify-start border-b-4 border-core-white-100 pt-8">
             <button
               onClick={() => closeModal(false)}
@@ -25,7 +25,7 @@ const ModalArt = ({ openModal, closeModal, title }) => {
             </div>
           </div>
           <div className="mx-24 my-5 bg-project-bg bg-no-repeat bg-center h-min-screen h-200">
-            <div className="flex justify-center pt-16 pb-4 text-xl">
+            <div className="flex justify-center pt-16 pb-3 text-xl">
               <button
                 className="mx-4 underline"
                 onClick={() => setChangeData(false)}
@@ -114,7 +114,7 @@ const ModalArt = ({ openModal, closeModal, title }) => {
                 <div className="flex justify-center mt-3 mx-auto">
                   <iframe
                     width="880"
-                    height="488"
+                    height="490"
                     src={`https://www.youtube.com/embed/sMxwCVPT5ZA?autoplay=1&mute=1&enablejsapi=1`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

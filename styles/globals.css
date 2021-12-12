@@ -38,6 +38,30 @@
    float: none!important;
   }
 
+  .modal-center {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .arrow-left { 
+    position: absolute;
+    bottom: 233px;
+  }
+  .arrow-right { 
+    right: 379px;
+    position: absolute;
+    bottom: 233px;
+  }
+
+  .modal-center-top {
+    position: fixed;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+  }
+
   .ggg {
     width: 64rem;
     height: 66rem;

@@ -46,10 +46,19 @@ const ModalDessert = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
+              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
+                แอปเปิ้ล + เครป (ดั้งเดิม/ ช็อคโกแลต/ ชาเขียว) Apple + Crape
+                (Original/Chocolate/Green tea)
+              </a>
               <a href="#" className="relative">
-                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
-                  แอปเปิ้ล + เครป (ดั้งเดิม/ ช็อคโกแลต/ ชาเขียว) Apple + Crape
-                  (Original/Chocolate/Green tea)
+                <div className="h-52 flex flex-wrap content-center">
+                  <Image
+                    width={200}
+                    height={208}
+                    priority
+                    src="/images/dessert/2.png"
+                    className="w-52 h-52 rounded-xl"
+                  />
                 </div>
               </a>
             </div>
@@ -144,27 +153,54 @@ const ModalDessert = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
+              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
+                ทาร์ตเลม่อนชีส และไอศกรีมช็อคโกแลต Lemon cheese tart with
+                Chocolate icecream
+              </a>
               <a href="#" className="relative">
-                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
-                  ทาร์ตเลม่อนชีส และไอศกรีมช็อคโกแลต Lemon cheese tart with
-                  Chocolate icecream
+                <div className="h-52 flex flex-wrap content-center">
+                  <Image
+                    width={200}
+                    height={208}
+                    priority
+                    src="/images/dessert/8.png"
+                    className="w-52 h-52 rounded-xl"
+                  />
                 </div>
               </a>
             </div>
             <div className="relative m-4">
+              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
+                เค้กส้มและชาร้อน The original orange cake served with hot
+                english tea
+              </a>
               <a href="#" className="relative">
-                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
-                  เค้กส้มและชาร้อน The original orange cake served with hot
-                  english tea
+                <div className="h-52 flex flex-wrap content-center">
+                  <Image
+                    width={200}
+                    height={208}
+                    priority
+                    src="/images/dessert/9.png"
+                    className="w-52 h-52 rounded-xl"
+                  />
                 </div>
               </a>
             </div>
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
+              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
+                ไอศกรีม(ลูก) Icecream (scoop)
+              </a>
               <a href="#" className="relative">
-                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
-                  ไอศกรีม(ลูก) Icecream (scoop)
+                <div className="h-52 flex flex-wrap content-center">
+                  <Image
+                    width={200}
+                    height={208}
+                    priority
+                    src="/images/dessert/10.png"
+                    className="w-52 h-52 rounded-xl"
+                  />
                 </div>
               </a>
             </div>
@@ -210,9 +246,18 @@ const ModalDessert = ({ openModal, closeModal }) => {
               </a>
             </div>
             <div className="relative m-4">
+              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 rounded-xl bg-opacity-60 duration-300">
+                มิล์คเชค Ice cream milkshake
+              </a>
               <a href="#" className="relative">
-                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
-                  มิล์คเชค Ice cream milkshake
+                <div className="h-52 flex flex-wrap content-center">
+                  <Image
+                    width={200}
+                    height={208}
+                    priority
+                    src="/images/dessert/15.png"
+                    className="w-52 h-52 rounded-xl"
+                  />
                 </div>
               </a>
             </div>
@@ -235,9 +280,18 @@ const ModalDessert = ({ openModal, closeModal }) => {
           </div>
           <div className="flex justify-center">
             <div className="relative m-4">
+              <a className="absolute px-3 inset-0 z-10 bg-core-gray-200 text-core-white-100 text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-60 duration-300 rounded-xl">
+                ไอศกรีมโฟล้ต (รูทเบียร์) Ice cream float (Root beer)
+              </a>
               <a href="#" className="relative">
-                <div className="justify-center px-3 w-200 text-core-white-100 h-208 flex flex-wrap content-center bg-core-gray-200 rounded-xl">
-                  ไอศกรีมโฟล้ต (รูทเบียร์) Ice cream float (Root beer)
+                <div className="h-52 flex flex-wrap content-center">
+                  <Image
+                    width={200}
+                    height={208}
+                    priority
+                    src="/images/dessert/17.png"
+                    className="w-52 h-52 rounded-xl"
+                  />
                 </div>
               </a>
             </div>

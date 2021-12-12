@@ -4,10 +4,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -p $PORT",
+    "lint": "next lint",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@svgr/webpack": "^5.5.0",
     "next": "12.0.4",
     "next-fonts": "^1.5.1",
@@ -22,5 +24,9 @@
     "eslint-config-next": "12.0.4",
     "postcss": "^8.3.11",
     "tailwindcss": "^2.2.19"
+  },
+  "engines": {
+    "node": "14.18.1",
+    "npm": "6.14.15"
   }
 }
